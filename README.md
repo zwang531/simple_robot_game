@@ -1,5 +1,5 @@
 # simple_robot_game
-game1.py:
+game1.py:<br />
 Given a starting position [x,y] (0<x,y<9), initial direction faced (W, S, N, E) on 8 x 8 square board and sequence of actions for a robot, print the outcome; direction faced and position on the board.
 Allowed Actions: 
 M: Move 1 square forward
@@ -21,8 +21,8 @@ open Terminal, navigate to the directory that has the python file and run the fo
 python game1.py
 
 
-game2.py:
-Version 2- Given a starting position [x,y] (0<x,y<9), initial direction faced (W, S, N, E) on 8 x 8 square board and the target position, direction and maximum actions allowed, print all possible actions robot can make to get to that position.
+game2.py:<br />
+Given a starting position [x,y] (0<x,y<9), initial direction faced (W, S, N, E) on 8 x 8 square board and the target position, direction and maximum actions allowed, print all possible actions robot can make to get to that position.
 Allowed Actions: 
 M: Move 1 square forward
 L: Turn left
