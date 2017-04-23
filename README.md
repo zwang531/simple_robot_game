@@ -15,7 +15,7 @@ Location : [1,6]
 Direction faced:S
 
 How to test:
-open terminal, navigate to the directory that has the python file and run the following,
+open Terminal, navigate to the directory that has the python file and run the following,\n
 python game1.py
 
 
@@ -37,5 +37,5 @@ Actions - 1 : M,R,M,R
 
 
 How to test:
-open terminal, navigate to the directory that has the python file and run the following,
+open Terminal, navigate to the directory that has the python file and run the following,\n
 python game2.py
