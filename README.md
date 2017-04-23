@@ -1,6 +1,6 @@
 # simple_robot_game
 game1.py:
-Version 1- Given a starting position [x,y] (0<x,y<9), initial direction faced (W, S, N, E) on 8 x 8 square board and sequence of actions for a robot, print the outcome; direction faced and position on the board.
+Given a starting position [x,y] (0<x,y<9), initial direction faced (W, S, N, E) on 8 x 8 square board and sequence of actions for a robot, print the outcome; direction faced and position on the board.
 Allowed Actions: 
 M: Move 1 square forward
 L: Turn left
@@ -13,6 +13,8 @@ Actions: M,M,M,L,M,R,R,R
 Output:
 Location : [1,6]
 Direction faced:S
+
+Design decision: if user input actions navigate the robot move beyond the board boundaries, the robot will simply ignore such action and take the next valid action.
 
 How to test:
 open Terminal, navigate to the directory that has the python file and run the following,<br />
@@ -35,6 +37,7 @@ Maximum actions allowed: 4
 Output:
 Actions - 1 : M,R,M,R
 
+Design decision: BFS
 
 How to test:
 open Terminal, navigate to the directory that has the python file and run the following,<br />
