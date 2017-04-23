@@ -1,13 +1,22 @@
 #!/usr/bin/python
 
+# Given a starting position [x,y] (0<x,y<9), 
+# initial direction faced (W, S, N, E) on 8 x 8 square board 
+# and the target position, direction and maximum actions allowed, 
+# print all possible actions robot can make to get to that position.
+
 N = 0
 E = 1
 S = 2
 W = 3
+
 BOUNDARY = 8
-MAX_N_ACTIONS_ALLOWED = 0
+
+MAX_NUM_ACTIONS_ALLOWED = 0
+
 INT_FACE = {0: 'N', 1: 'E', 2: 'S', 3: 'W'}
 FACE_INT = {'N': 0, 'E': 1, 'S': 2, 'W': 3}
+
 
 class Node:
 	def __init__(self, x=0, y=0, dir=N):
@@ -22,6 +31,7 @@ class Node:
 	def equal(self, node):
 		return self.x == node.x and self.y == node.y and self.dir == node.dir
 
+	# for debugging purpose
 	def print_me(self):
 		print str(self.x) + str(self.y) + str(self.dir)		
 
@@ -102,8 +112,8 @@ def user_prompt(node, sstr):
 		for d in location.split(','):
 			if d.isdigit():
 				cord.append(int(d))
-		if len(cord) == 2 and cord[0]*cord[1] >= 0 \
-			and cord[0] < BOUNDARY and cord[1] < BOUNDARY:
+		if len(cord) == 2 and cord[0]*cord[1] > 0 \
+			and cord[0] <= BOUNDARY and cord[1] <= BOUNDARY:
 			break
 		else:
 			print 'invalid input for position, please retry'
@@ -135,7 +145,7 @@ def main():
 	d = raw_input('Maximum actions allowed (positive integer only): ')
 	while True:
 		if d.isdigit():
-			MAX_N_ACTIONS_ALLOWED = int(d)
+			MAX_NUM_ACTIONS_ALLOWED = int(d)
 			break
 		else:
 			print 'invalid input, please retry'
@@ -147,18 +157,22 @@ def main():
 
 	while len(queue):
 		curr = queue.pop(0)
-		# curr.print_me() 
-		if curr.equal(target) and curr.level <= MAX_N_ACTIONS_ALLOWED:
+		if curr.equal(target) and curr.level <= MAX_NUM_ACTIONS_ALLOWED:
 			actions = []
 			get_actions(curr, actions)
 			num += 1
 			print_actions(actions, num)
 
-		if curr.level < MAX_N_ACTIONS_ALLOWED:
+		if curr.level < MAX_NUM_ACTIONS_ALLOWED:
 			if move_allowed(curr):
 				queue.append(move_forward(curr))
 			queue.append(turn_left(curr))
 			queue.append(turn_right(curr))
+
+	if num == 0:
+		print 'No possible actions!'
+	else:
+		print 'No more possible actions!'
 
 
 if __name__ == '__main__':
