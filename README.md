@@ -14,6 +14,11 @@ Output:
 Location : [1,6]
 Direction faced:S
 
+How to test:
+open terminal, navigate to the directory that has the python file and run the following,
+python game1.py
+
+
 game2.py:
 Version 2- Given a starting position [x,y] (0<x,y<9), initial direction faced (W, S, N, E) on 8 x 8 square board and the target position, direction and maximum actions allowed, print all possible actions robot can make to get to that position.
 Allowed Actions: 
@@ -29,3 +34,8 @@ Target Direction: S
 Maximum actions allowed: 4
 Output:
 Actions - 1 : M,R,M,R
+
+
+How to test:
+open terminal, navigate to the directory that has the python file and run the following,
+python game2.py
